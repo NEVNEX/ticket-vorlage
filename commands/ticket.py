@@ -180,7 +180,7 @@ class TDHClose(discord.ui.View):
         async def callback(interaction: discord.Interaction):
             creator = await interaction.client.fetch_user(interaction.channel.topic)
             selected_user = select.values[0]
-            await interaction.channel.send_message(f"I added {select.values[0].mention} to ticket **Successful**.", ephemeral=True)
+            await interaction.response.send_message(f"I added {select.values[0].mention} to ticket **Successful**.", ephemeral=True)
             overwrites = {
                 interaction.guild.default_role: discord.PermissionOverwrite(read_messages=False),
                 interaction.guild.me: discord.PermissionOverwrite(read_messages=True),
